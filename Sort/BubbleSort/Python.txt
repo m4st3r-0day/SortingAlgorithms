@@ -1,0 +1,16 @@
+def bubble_sort(arr):
+    # Iterate over the entire array
+    for i in range(len(arr) - 1):
+        # For each iteration, iterate over the sub-array to the right of the last swapped element
+        for j in range(len(arr) - 1 - i):
+            # If the current element is greater than the next element, swap them
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+arr = [5, 1, 4, 2, 8, 0, 3, 9, 6, 7]
+
+print("Original array:", arr)
+
+bubble_sort(arr)
+
+print("Sorted array:", arr)

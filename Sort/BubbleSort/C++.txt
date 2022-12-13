@@ -1,0 +1,35 @@
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+// Sorts the specified vector in ascending order using the bubble sort algorithm.
+void bubble_sort(std::vector<int>& vec) {
+    for (size_t i = 0; i < vec.size() - 1; i++) {
+        for (size_t j = 0; j < vec.size() - 1 - i; j++) {
+            if (vec[j] > vec[j + 1]) {
+                // swap vec[j] and vec[j + 1]
+                std::swap(vec[j], vec[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    std::vector<int> vec = {5, 1, 4, 2, 8, 0, 3, 9, 6, 7};
+
+    std::cout << "Original vector: ";
+    for (int x : vec) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
+
+    bubble_sort(vec);
+
+    std::cout << "Sorted vector: ";
+    for (int x : vec) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
